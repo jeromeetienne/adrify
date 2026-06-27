@@ -3,14 +3,24 @@
 	"version": "1.0.0",
 	"description": "Architecture Decision Records skill for Claude Code — deterministic ADR helpers and a Stop-hook nudge.",
 	"type": "module",
-	"private": true,
+	"bin": {
+		"adrify": "dist/cli.js"
+	},
+	"main": "dist/cli.js",
+	"types": "dist/cli.d.ts",
+	"files": [
+		"dist",
+		"dotclaude_folder"
+	],
 	"engines": {
 		"node": ">=20.12"
 	},
 	"scripts": {
 		"adrify": "tsx src/cli.ts",
 		"typecheck": "tsc --noEmit",
-		"build": "tsc -p tsconfig.build.json"
+		"build": "tsc -p tsconfig.build.json",
+		"prepublishOnly": "npm run build",
+		"publish:all": "npm run build && npm version patch && npm publish"
 	},
 	"author": {
 		"name": "Jerome Etienne",

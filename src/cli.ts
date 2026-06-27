@@ -1,4 +1,6 @@
-#!/usr/bin/env -S npx tsx
+#!/usr/bin/env node
+import Fs from 'node:fs';
+import Path from 'node:path';
 import { Command } from 'commander';
 import Chalk from 'chalk';
 import { ScaffoldCommand } from './commands/scaffold_command.js';
@@ -14,10 +16,14 @@ const DEFAULT_ADR_DIR = 'docs/ADRs';
 
 /** Wire up the subcommands and run them. */
 async function main(): Promise<void> {
+	const packageJsonPath = Path.join(import.meta.dirname, '..', 'package.json');
+	const { version } = JSON.parse(Fs.readFileSync(packageJsonPath, 'utf8')) as { version: string };
+
 	const program = new Command();
 	program
 		.name('adrify')
-		.description('Deterministic helpers and Stop-hook nudge for the adrify ADR skill');
+		.description('Deterministic helpers and Stop-hook nudge for the adrify ADR skill')
+		.version(version, '-V, --version', 'output the version number');
 
 	program
 		.command('scaffold')
