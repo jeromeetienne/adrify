@@ -106,6 +106,9 @@ dotclaude_folder/skills/adrjournal/
 
 - Files are named `NNNN-kebab-title.md`, four-digit zero-padded; `0000` is the
   meta-ADR. The CLI assigns numbers — do not hand-number.
+- Every record needs a title. `create` and `next` reject an empty or
+  symbol-only title (`error: title required`, exit 1) rather than writing a
+  malformed `NNNN-.md` file.
 - One decision per record. Records are immutable; to reverse a decision, write a
   new ADR and mark the old one `superseded by NNNN`.
 - Statuses: `proposed`, `accepted`, `deprecated`, `superseded by NNNN`.
