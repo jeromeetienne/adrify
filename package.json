@@ -1,6 +1,6 @@
 {
 	"name": "adrify",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Architecture Decision Records skill for Claude Code — deterministic ADR helpers and a Stop-hook nudge.",
 	"type": "module",
 	"bin": {
