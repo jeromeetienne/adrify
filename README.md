@@ -13,6 +13,9 @@ The skill prose lives in
 [`dotclaude_folder/skills/adrjournal/`](dotclaude_folder/skills/adrjournal); its
 deterministic mechanics live in [`src/`](src) as a small TypeScript CLI.
 
+[![npm version](https://img.shields.io/npm/v/adrjournal.svg)](https://www.npmjs.com/package/adrjournal)
+[![downloads](https://img.shields.io/npm/dm/adrjournal.svg)](https://www.npmjs.com/package/adrjournal)
+[![License](https://img.shields.io/github/license/jeromeetienne/adrjou)](LICENSE)
 ## What it does
 
 The skill keeps the parts that are easy to get inconsistent — sequential
@@ -97,6 +100,14 @@ dotclaude_folder/skills/adrjournal/
 - One decision per record. Records are immutable; to reverse a decision, write a
   new ADR and mark the old one `superseded by NNNN`.
 - Statuses: `proposed`, `accepted`, `deprecated`, `superseded by NNNN`.
+
+## Blog
+
+A short series on why adrjournal exists and how it's designed:
+
+1. [adrjournal: Your codebase is full of decisions nobody wrote down](docs/blog_posts/part-1-decisions-nobody-wrote-down.md)
+2. [adrjournal: Stop asking the model to count (the code-vs-model split)](docs/blog_posts/part-2-stop-asking-the-model-to-count.md)
+3. [adrjournal: Designing a nudge that helps without nagging](docs/blog_posts/part-3-a-nudge-that-helps-without-nagging.md)
 
 ## Reusing this in another project
 
