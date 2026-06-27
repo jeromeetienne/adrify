@@ -8,7 +8,7 @@ The skill and its hook are self-contained. To add them to a different repository
 # from this repo into the target repo
 cp -r .claude/skills/adrify           <target>/.claude/skills/adrify
 cp    .claude/hooks/adrify-nudge.sh   <target>/.claude/hooks/adrify-nudge.sh
-chmod +x <target>/.claude/skills/adrify/scripts/adr.sh <target>/.claude/hooks/adrify-nudge.sh
+chmod +x <target>/.claude/skills/adrify/scripts/adrify.sh <target>/.claude/hooks/adrify-nudge.sh
 ```
 
 ## 2. Register the Stop hook
@@ -54,7 +54,7 @@ touched", non-blocking `systemMessage`) is project-agnostic and needs no change.
 The skill and hook both default to `docs/ADRs`. The hook honours an `ADR_DIR`
 environment variable; the skill script takes the directory as a trailing
 argument. If a project keeps records elsewhere, set `ADR_DIR` in the hook entry
-and pass the directory to `adr.sh`.
+and pass the directory to `adrify.sh`.
 
 ## What is and is not portable
 

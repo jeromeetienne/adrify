@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 #
-# adr.sh — deterministic helpers for the `adr` skill.
+# adrify.sh — deterministic helpers for the `adrify` skill.
 #
 # The model writes the prose of each Architecture Decision Record; this script
 # owns the fiddly, error-prone mechanics (next number, zero-padding, slugifying,
 # scaffolding) so they are done the same way every time.
 #
 # Usage:
-#   adr.sh scaffold [<dir>]          Create the ADR directory, index, meta-ADR
+#   adrify.sh scaffold [<dir>]          Create the ADR directory, index, meta-ADR
 #                                    and template if they do not exist.
-#   adr.sh next "<title>" [<dir>]    Print the path of the next ADR file
+#   adrify.sh next "<title>" [<dir>]    Print the path of the next ADR file
 #                                    (NNNN-slug.md) WITHOUT creating it.
-#   adr.sh create "<title>" [<dir>]  Create the next ADR file from the template
+#   adrify.sh create "<title>" [<dir>]  Create the next ADR file from the template
 #                                    and print its path.
-#   adr.sh list [<dir>]              List existing ADRs, one per line.
-#   adr.sh reindex [<dir>]           Rebuild the index block in README.md from
+#   adrify.sh list [<dir>]              List existing ADRs, one per line.
+#   adrify.sh reindex [<dir>]           Rebuild the index block in README.md from
 #                                    the ADR files (title + status of each).
 #
 # <dir> defaults to docs/ADRs relative to the current working directory.
@@ -190,7 +190,7 @@ case "${1:-}" in
 	list)     cmd_list ;;
 	reindex)  cmd_reindex ;;
 	*)
-		echo "usage: adr.sh {scaffold|next|create|list|reindex} [args]" >&2
+		echo "usage: adrify.sh {scaffold|next|create|list|reindex} [args]" >&2
 		exit 1
 		;;
 esac

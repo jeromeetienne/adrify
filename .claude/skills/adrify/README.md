@@ -42,20 +42,20 @@ project can keep one log at the root or distribute logs per package. In this
 repository the records are distributed: cross-cutting decisions in `docs/ADRs`,
 and per-package decisions under `packages/<name>/docs/ADRs`.
 
-## The `adr.sh` helper
+## The `adrify.sh` helper
 
-`scripts/adr.sh` owns the deterministic mechanics. The model writes the prose; the
+`scripts/adrify.sh` owns the deterministic mechanics. The model writes the prose; the
 script handles numbering, scaffolding, file creation, and index rebuilds. Each
 command takes the ADR directory as an optional trailing argument (default
 `docs/ADRs`).
 
 | Command | Purpose |
 |---|---|
-| `adr.sh scaffold [<dir>]` | Create the directory, index, meta-ADR, and template (idempotent). |
-| `adr.sh next "<title>" [<dir>]` | Print the next numbered file path without creating it. |
-| `adr.sh create "<title>" [<dir>]` | Create the next record from the template and print its path. |
-| `adr.sh list [<dir>]` | List existing records. |
-| `adr.sh reindex [<dir>]` | Rebuild the index block in `README.md` from the records. |
+| `adrify.sh scaffold [<dir>]` | Create the directory, index, meta-ADR, and template (idempotent). |
+| `adrify.sh next "<title>" [<dir>]` | Print the next numbered file path without creating it. |
+| `adrify.sh create "<title>" [<dir>]` | Create the next record from the template and print its path. |
+| `adrify.sh list [<dir>]` | List existing records. |
+| `adrify.sh reindex [<dir>]` | Rebuild the index block in `README.md` from the records. |
 
 ## Layout
 
@@ -64,7 +64,7 @@ command takes the ADR directory as an optional trailing argument (default
 ├── SKILL.md                     instructions Claude loads
 ├── README.md                    this file
 ├── scripts/
-│   └── adr.sh                   numbering, scaffold, create, list, reindex
+│   └── adrify.sh                   numbering, scaffold, create, list, reindex
 └── references/
     ├── nygard_format.md         section-by-section writing guidance + examples
     ├── backfill_guide.md        where decisions hide; the subagent brief

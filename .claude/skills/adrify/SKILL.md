@@ -36,7 +36,7 @@ The helper script lives next to this file. Resolve its directory from the skill
 location and always call it with the project root as the working directory:
 
 ```bash
-ADR="$CLAUDE_PROJECT_DIR/.claude/skills/adrify/scripts/adr.sh"   # adjust if reused elsewhere
+ADR="$CLAUDE_PROJECT_DIR/.claude/skills/adrify/scripts/adrify.sh"   # adjust if reused elsewhere
 ```
 
 ## Scaffold (run once per repo)
