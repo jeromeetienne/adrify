@@ -17,6 +17,13 @@ deterministic mechanics live in [`src/`](src) as a small TypeScript CLI.
 [![downloads](https://img.shields.io/npm/dm/adrjournal.svg)](https://www.npmjs.com/package/adrjournal)
 [![License](https://img.shields.io/github/license/jeromeetienne/adrjou)](LICENSE)
 
+## How to install
+
+Run `npx adrjournal install <target>/.claude` to drop the skill prose into the
+target and auto-register `npx adrjournal nudge` as a `Stop` hook — no source
+checkout needed. Full instructions are in
+[`references/reuse.md`](dotclaude_folder/skills/adrjournal/references/reuse.md).
+
 ## Blog
 
 A short series on why adrjournal exists and how it's designed:
@@ -112,10 +119,3 @@ dotclaude_folder/skills/adrjournal/
 - One decision per record. Records are immutable; to reverse a decision, write a
   new ADR and mark the old one `superseded by NNNN`.
 - Statuses: `proposed`, `accepted`, `deprecated`, `superseded by NNNN`.
-
-## Reusing this in another project
-
-Run `npx adrjournal install <target>/.claude` to drop the skill prose into the
-target and auto-register `npx adrjournal nudge` as a `Stop` hook — no source
-checkout needed. Full instructions are in
-[`references/reuse.md`](dotclaude_folder/skills/adrjournal/references/reuse.md).
